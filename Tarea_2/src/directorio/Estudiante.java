@@ -1,10 +1,20 @@
 package directorio;
 
+import java.util.Arrays;
+
 public class Estudiante extends Persona {
 	private int numero_semestre;
 	private String carrera;
 	private String numero_cuenta;
-	private String[] materias = new String[5];
+	private String[] materias = {};
+	
+	@Override
+	public String toString() {
+		return "Estudiante \nNumero de semestre: " + numero_semestre + " \nCarrera:" + carrera + "\nNumero de cuenta:"
+				+ numero_cuenta + "\n Materias: " + Arrays.toString(materias) + "\nCelular: " + getCelular()
+				+ "\nFecha de Cumpleaños: " + getFecha_cumpleaños() + "\nCorreo electrónico: "
+				+ getCorreo_electronico() + "Nombre completo: " + getNombre_completo();
+	}
 	public int getNumero_semestre() {
 		return numero_semestre;
 	}

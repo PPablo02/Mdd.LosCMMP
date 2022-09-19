@@ -1,5 +1,7 @@
 package directorio;
 
+import java.util.Arrays;
+
 public class Directorio {
 	Persona dir[] = {};
 	int cont=0;
@@ -10,7 +12,7 @@ public class Directorio {
 		dir[cont] = persona;
 		
 	}
-	public void mostrar_datos(String nombre) {
+	public void mostrar_datos_nombre(String nombre) {
 		for(Persona i: dir) {
 			if (nombre.equals(i.getNombre_completo())) {
 				System.out.println(i.toString());
@@ -37,17 +39,18 @@ public class Directorio {
 			for(Persona i: dir) {
 				if (nombre.equals(i.getNombre_completo())&&(i instanceof Coordinador)) {
 					System.out.println(((Coordinador)i).toString());
+					
 				}
 			}
-				
-		}  
+			break;}  
 	} 
-	public void eliminar_datos(String nombre) {
+	public void eliminar_datos_nombre(String nombre) {
 		Persona[] copia = new Persona[dir.length-1];
 		for (int i = 0, j = 0; i < dir.length; i++) {
 		    if (!nombre.equals(dir[i].getNombre_completo())) {
 		        copia[j++] = dir[i];
 		        dir = copia;
+		        cont--;
 		    }
 		}
 	}
@@ -123,6 +126,124 @@ public class Directorio {
 			}
 		}
 	}
+	public void Mostrar_conCorreo() {
+		System.out.println("Profesores con correo: ");
+		for (Persona i: dir) {
+			if (i instanceof Profesor) {
+				if (((Profesor)i).getCorreo_electronico()!="") {
+					System.out.println(((Profesor)i).toString());
+				}
+			}
+		}
+		System.out.println("Coordinadores con correo: ");
+		for (Persona i: dir) {
+			if (i instanceof Coordinador) {
+				if (((Coordinador)i).getCorreo_electronico()!="") {
+					System.out.println(((Coordinador)i).toString());
+				}
+			}
+		}
+		System.out.println("Estudiantes con correo: ");
+		for (Persona i: dir) {
+			if (i instanceof Estudiante) {
+				if (((Estudiante)i).getCorreo_electronico()!="") {
+					System.out.println(((Estudiante)i).toString());
+				}
+			}
+		}
+	}
+	public void Mostrar_contactos_Carrera (String carrera) {
+		System.out.println("Profesores de esa carrera: ");
+		for (Persona i: dir) {
+			if (i instanceof Profesor) {
+				if (carrera.equals(((Profesor)i).getCarrera())) {
+					System.out.println(((Profesor)i).getNombre_completo());
+				}
+			}
+		}
+		System.out.println("Estudiantes de esa carrera: ");
+		for (Persona i: dir) {
+			if (i instanceof Estudiante) {
+				if (carrera.equals(((Estudiante)i).getCarrera())) {
+					System.out.println(((Estudiante)i).getNombre_completo());
+				}
+			}
+		}
+		System.out.println("Coordinador de esa carrera: ");
+		for (Persona i: dir) {
+			if (i instanceof Coordinador) {
+				if (carrera.equals(((Coordinador)i).getCarrera())) {
+					System.out.println(((Coordinador)i).getNombre_completo());
+				}
+			}
+		}
+	
+	}
+	public void MostrarSoloEoP(String rol) {
+		for (Persona p:Ordenar_Asc_Nombre(dir, new ComparaNombre())) {
+			if (rol.equals("Estudiante")) {
+				System.out.println(((Estudiante)p).toString());
+			}
+			if (rol.equals("Profesor")) {
+				System.out.println(((Profesor)p).toString());
+			}
+		}
+		
+	}
+	public void eliminar_datos_correo(String correo) {
+		Persona[] copia = new Persona[dir.length-1];
+		for (int i = 0, j = 0; i < dir.length; i++) {
+		    if (!correo.equals(dir[i].getCorreo_electronico())) {
+		        copia[j++] = dir[i];
+		        dir = copia;
+		        cont--;
+		    }
+		}
+	}
+	public void mostrar_datos_celular(String celular) {
+		for(Persona i: dir) {
+			if (celular.equals(i.getCelular())) {
+				System.out.println(i.toString());
+			}
+		}
+	}
+	public Persona[] Ordenar_Asc_Nombre(Persona[] dir, java.util.Comparator<Persona> cmp) {
+		Persona orden[] = dir;
+	    for(int i = 0;i < orden.length;i++)
+	      for(int j = i + 1; j < orden.length; j++)
+	        if (cmp.compare(dir[i],dir[j]) > 0 ){   //Los datos estan desordenados
+	          Persona temp = orden[i];                  //por tanto los intercambia
+	          orden[i] = orden[j];
+	          orden[j] = temp;
+	        }
+		return orden;}
+	
+	public void Agregar() {
+		Persona[] nuevo = Arrays.copyOf(dir, dir.length+1);
+		dir = nuevo;}
+	@Override
+	public String toString() {
+		String dirStr= "Profesores: ";
+		for (Persona p:Ordenar_Asc_Nombre(dir, new ComparaNombre())) {
+			if (p instanceof Profesor) {
+					dirStr= dirStr+ ((Profesor)p).toString();
+				}
+		}
+		dirStr = dirStr + "\nEstudiantes: ";
+		for (Persona p:Ordenar_Asc_Nombre(dir, new ComparaNombre())) {
+			if (p instanceof Estudiante) {
+					dirStr= dirStr+ ((Estudiante)p).toString();
+				}
+		}
+		dirStr = dirStr + "\nCoordinadores: ";
+		for (Persona p:Ordenar_Asc_Nombre(dir, new ComparaNombre())) {
+			if (p instanceof Coordinador) {
+					dirStr= dirStr+ ((Coordinador)p).toString();
+				}
+		}
+		return dirStr;
+	}
+	
 	
 	
 	

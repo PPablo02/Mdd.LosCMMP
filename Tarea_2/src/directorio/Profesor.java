@@ -10,6 +10,19 @@ public class Profesor extends Persona{
 	private double salario;
 	private String carrera;
 	
+	/**
+	 * Constructor de la clase profesor
+	 * @param celular
+	 * @param fecha_cumpleaños
+	 * @param correo_electronico
+	 * @param nombre_completo
+	 * @param num_profesor
+	 * @param tel_oficina
+	 * @param dep_escolar
+	 * @param grupos
+	 * @param salario
+	 * @param carrera
+	 */
 	public Profesor(String celular, String fecha_cumpleaños, String correo_electronico, String nombre_completo,
 			String num_profesor, String tel_oficina, String dep_escolar, String[] grupos, double salario,
 			String carrera) {

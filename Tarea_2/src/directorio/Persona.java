@@ -6,6 +6,13 @@ public class Persona {
 	private String correo_electronico;
 	private String nombre_completo;
 	
+	/**
+	 * Constructor de la clase persona.
+	 * @param celular
+	 * @param fecha_cumpleaños
+	 * @param correo_electronico
+	 * @param nombre_completo
+	 */
 	public Persona(String celular, String fecha_cumpleaños, String correo_electronico, String nombre_completo) {
 		this.celular = celular;
 		this.fecha_cumpleaños = fecha_cumpleaños;

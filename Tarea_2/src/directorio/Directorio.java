@@ -5,15 +5,19 @@ import java.util.Arrays;
 public class Directorio {
 	Persona dir[] = {};
 	int cont=0;
+	/**
+	 * Método que inserta contactos al directorio
+	 * @param persona
+	 */
 	public void insertar_contacto(Persona persona) {
 		if (cont>dir.length) {Agregar();}
-		for (int i=0; i<= dir.length; i++) {
-			if (dir[i]==null) {
 				dir[cont] = persona;
-				cont++;};
-		}
+				cont++;}
 		
-	}
+	/**
+	 * Método que muestra contactos con cierto nombre
+	 * @param nombre
+	 */
 	public void mostrar_datos_nombre(String nombre) {
 		for(Persona i: dir) {
 			if (nombre.equals(i.getNombre_completo())) {
@@ -21,6 +25,11 @@ public class Directorio {
 			}
 		}
 	}
+	/**
+	 * Método que muestra datos del contacto dado nombre y rol
+	 * @param nombre
+	 * @param rol
+	 */
 	public void mostrar_datos(String nombre, String rol) {
 		switch (rol) {
 		case "Estudiante":
@@ -46,6 +55,10 @@ public class Directorio {
 			}
 			break;}  
 	} 
+	/**
+	 * Método que elimina datos del directorio dado nombre
+	 * @param nombre
+	 */
 	public void eliminar_datos_nombre(String nombre) {
 		Persona[] copia = new Persona[dir.length-1];
 		for (int i = 0, j = 0; i < dir.length; i++) {
@@ -56,7 +69,18 @@ public class Directorio {
 		    }
 		}
 	}
-	
+	/**
+	 * Métpdp que actualiza datos de un contacto del directorio, dado nombre
+	 * @param nombre
+	 * @param n_num_cuenta
+	 * @param n_nombre
+	 * @param n_celular
+	 * @param n_fecha_cumpleaños
+	 * @param n_correo
+	 * @param n_carrera
+	 * @param materias
+	 * @param n_semestre
+	 */
 	public void actualizar_datos_estudiante(String nombre, String n_num_cuenta, String n_nombre,
 			String n_celular, String n_fecha_cumpleaños, String n_correo, String n_carrera, String[] 
 			materias, int n_semestre) {
@@ -71,7 +95,20 @@ public class Directorio {
 			((Estudiante)i).setMaterias(materias);
 			((Estudiante)i).setNumero_semestre(n_semestre);
 			}}}
-
+/**
+ * Método que actualiza datos de profesores
+ * @param nombre
+ * @param n_num_prof
+ * @param n_nombre
+ * @param n_celular
+ * @param n_fecha_cumpleaños
+ * @param n_correo
+ * @param n_carrera
+ * @param n_num_oficina
+ * @param n_dpto
+ * @param salario
+ * @param n_grupos
+ */
 	public void actualizar_datos_Profesor(String nombre, String n_num_prof, String n_nombre, String n_celular,
 			String n_fecha_cumpleaños, String n_correo, String n_carrera, String n_num_oficina, String n_dpto,
 			double salario, String[] n_grupos) {
@@ -91,6 +128,19 @@ public class Directorio {
 			}
 		}
 	}
+	/**
+	 * Método que actualiza datos de coordinadores
+	 * @param nombre
+	 * @param n_num_empl
+	 * @param n_nombre
+	 * @param n_celular
+	 * @param n_fecha_cumpleaños
+	 * @param n_correo
+	 * @param n_carrera
+	 * @param n_num_oficina
+	 * @param n_dpto
+	 * @param salario
+	 */
 	public void actualizar_datos_Coordinador(String nombre, String n_num_empl, String n_nombre, String n_celular,
 			String n_fecha_cumpleaños, String n_correo, String n_carrera, String n_num_oficina, String n_dpto,
 			double salario) {
@@ -110,6 +160,10 @@ public class Directorio {
 			}
 		}
 	}
+	/**
+	 * Método que imprime contactos con cierto salario
+	 * @param salario
+	 */
 	public void Mostrar_Segun_Sueldo(double salario) {
 		System.out.println("Profesores con ese sueldo: ");
 		for (Persona i: dir) {
@@ -128,6 +182,9 @@ public class Directorio {
 			}
 		}
 	}
+	/**
+	 * Método que imprime contactos con correo diferente de una cadena vacía
+	 */
 	public void Mostrar_conCorreo() {
 		System.out.println("Profesores con correo: ");
 		for (Persona i: dir) {
@@ -154,6 +211,10 @@ public class Directorio {
 			}
 		}
 	}
+	/**
+	 * Método que imprime contactos correspondientes a cierta carrera
+	 * @param carrera
+	 */
 	public void Mostrar_contactos_Carrera (String carrera) {
 		System.out.println("Profesores de esa carrera: ");
 		for (Persona i: dir) {

@@ -7,6 +7,18 @@ public class Coordinador extends Persona{
 	private double salario;
 	private String dep_escolar;
 	
+	/**
+	 * Constructor de la clase coordinador
+	 * @param celular
+	 * @param fecha_cumpleaños
+	 * @param correo_electronico
+	 * @param nombre_completo
+	 * @param num_empleado
+	 * @param tel_oficina
+	 * @param carrera
+	 * @param salario
+	 * @param dep_escolar
+	 */
 	public Coordinador(String celular, String fecha_cumpleaños, String correo_electronico, String nombre_completo,
 			String num_empleado, String tel_oficina, String carrera, double salario, String dep_escolar) {
 		super(celular, fecha_cumpleaños, correo_electronico, nombre_completo);
@@ -35,21 +47,42 @@ public class Coordinador extends Persona{
 	public double getSalario() {
 		return salario;
 	}
+	
 	public String getDep_escolar() {
 		return dep_escolar;
 	}
+	/**
+	 * 
+	 * @param num_empleado
+	 */
 	public void setNum_empleado(String num_empleado) {
 		this.num_empleado = num_empleado;
 	}
+	/**
+	 * 
+	 * @param tel_oficina
+	 */
 	public void setTel_oficina(String tel_oficina) {
 		this.tel_oficina = tel_oficina;
 	}
+	/**
+	 * 
+	 * @param carrera
+	 */
 	public void setCarrera(String carrera) {
 		this.carrera = carrera;
 	}
+	/**
+	 * 
+	 * @param sueldo
+	 */
 	public void setSalario(double sueldo) {
 		this.salario = sueldo;
 	}
+	/**
+	 * 
+	 * @param dep_escolar
+	 */
 	public void setDep_escolar(String dep_escolar) {
 		this.dep_escolar = dep_escolar;
 	}

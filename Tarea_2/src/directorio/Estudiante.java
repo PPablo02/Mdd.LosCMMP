@@ -7,6 +7,17 @@ public class Estudiante extends Persona {
 	private String carrera;
 	private String numero_cuenta;
 	private String[] materias = {};
+	/**
+	 * Constructor de la clase estudiante.
+	 * @param celular
+	 * @param fecha_cumpleaños
+	 * @param correo_electronico
+	 * @param nombre_completo
+	 * @param num_semestre
+	 * @param carrera
+	 * @param num_cuenta
+	 * @param materias
+	 */
 	public Estudiante(String celular, String fecha_cumpleaños, String correo_electronico, String nombre_completo,
 			int num_semestre, String carrera, String num_cuenta, String[] materias) {
 		super(celular, fecha_cumpleaños, correo_electronico, nombre_completo);

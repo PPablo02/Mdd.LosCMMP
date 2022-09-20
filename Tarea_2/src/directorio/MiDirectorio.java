@@ -2,6 +2,7 @@ package directorio;
 import javax.swing.JOptionPane;
 public class MiDirectorio {
 	public static void main(String[] args) {
+		//Primero preguntamos el tamaño del directorio
 		int num_contactos = Integer.parseInt(JOptionPane.showInputDialog("Inserta el número de contactos que deseas que tenga el directorio owo:"));
 		Directorio directorio = new Directorio();
 		for (int i=0; i<=num_contactos+1; i++) {
@@ -164,6 +165,10 @@ public class MiDirectorio {
 			
 			opcion = menu();}
 	}
+	/**
+	 * Método que imprime el menú
+	 * @return int opción, la opción determina que operación realizaremos en el directorio
+	 */
 	public static int menu() {
 		int opcion = Integer.parseInt(JOptionPane.showInputDialog("==========DIRECTORIO==========\n"
 				+ "1) Insertar nuevo contacto.\n2) Mostrar daros de un contacto (Insertando nombre).\n3) Mostrar datos de un contacto (insertando nombre y rol)"

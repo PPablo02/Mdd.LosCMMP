@@ -33,7 +33,7 @@ public class Estudiante extends Persona {
 		return "Estudiante \nNumero de semestre: " + numero_semestre + " \nCarrera:" + carrera + "\nNumero de cuenta:"
 				+ numero_cuenta + "\n Materias: " + Arrays.toString(materias) + "\nCelular: " + getCelular()
 				+ "\nFecha de Cumpleaños: " + getFecha_cumpleaños() + "\nCorreo electrónico: "
-				+ getCorreo_electronico() + "Nombre completo: " + getNombre_completo();
+				+ getCorreo_electronico() + "\nNombre completo: " + getNombre_completo();
 	}
 	public int getNumero_semestre() {
 		return numero_semestre;

@@ -7,6 +7,15 @@ public class Estudiante extends Persona {
 	private String carrera;
 	private String numero_cuenta;
 	private String[] materias = {};
+	public Estudiante(String celular, String fecha_cumpleaños, String correo_electronico, String nombre_completo,
+			int num_semestre, String carrera, String num_cuenta, String[] materias) {
+		super(celular, fecha_cumpleaños, correo_electronico, nombre_completo);
+		this.numero_semestre=num_semestre;
+		this.carrera=carrera;
+		this.numero_cuenta=num_cuenta;
+		this.materias= materias;
+		// TODO Auto-generated constructor stub
+	}
 	
 	@Override
 	public String toString() {

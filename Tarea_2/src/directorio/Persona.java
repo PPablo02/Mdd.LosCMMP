@@ -5,6 +5,13 @@ public class Persona {
 	private String fecha_cumpleaños;
 	private String correo_electronico;
 	private String nombre_completo;
+	
+	public Persona(String celular, String fecha_cumpleaños, String correo_electronico, String nombre_completo) {
+		this.celular = celular;
+		this.fecha_cumpleaños = fecha_cumpleaños;
+		this.correo_electronico = correo_electronico;
+		this.nombre_completo = nombre_completo;
+	}
 	public String getCelular() {
 		return celular;
 	}

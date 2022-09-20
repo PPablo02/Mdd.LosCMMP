@@ -5,11 +5,13 @@ import java.util.Arrays;
 public class Directorio {
 	Persona dir[] = {};
 	int cont=0;
-	public void insertar_contacto(Persona persona) {	
+	public void insertar_contacto(Persona persona) {
+		if (cont>dir.length) {Agregar();}
 		for (int i=0; i<= dir.length; i++) {
-			if (dir[i]==null) {cont++;};
+			if (dir[i]==null) {
+				dir[cont] = persona;
+				cont++;};
 		}
-		dir[cont] = persona;
 		
 	}
 	public void mostrar_datos_nombre(String nombre) {

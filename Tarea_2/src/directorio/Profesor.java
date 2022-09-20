@@ -10,6 +10,17 @@ public class Profesor extends Persona{
 	private double salario;
 	private String carrera;
 	
+	public Profesor(String celular, String fecha_cumpleaños, String correo_electronico, String nombre_completo,
+			String num_profesor, String tel_oficina, String dep_escolar, String[] grupos, double salario,
+			String carrera) {
+		super(celular, fecha_cumpleaños, correo_electronico, nombre_completo);
+		this.num_profesor = num_profesor;
+		this.tel_oficina = tel_oficina;
+		this.dep_escolar = dep_escolar;
+		this.grupos = grupos;
+		this.salario = salario;
+		this.carrera = carrera;
+	}
 	@Override
 	public String toString() {
 		return "Profesor \nNumero de profesor: " + num_profesor + "\nTelefono Oficina: " + tel_oficina + "\nDepartamento escolar: "

@@ -7,6 +7,15 @@ public class Coordinador extends Persona{
 	private double salario;
 	private String dep_escolar;
 	
+	public Coordinador(String celular, String fecha_cumpleaños, String correo_electronico, String nombre_completo,
+			String num_empleado, String tel_oficina, String carrera, double salario, String dep_escolar) {
+		super(celular, fecha_cumpleaños, correo_electronico, nombre_completo);
+		this.num_empleado = num_empleado;
+		this.tel_oficina = tel_oficina;
+		this.carrera = carrera;
+		this.salario = salario;
+		this.dep_escolar = dep_escolar;
+	}
 	@Override
 	public String toString() {
 		return "Coordinador \nNumero de empleado: " + num_empleado + "\nTelefono Oficina: " + tel_oficina + "\nCarrera que coordina: " + carrera
